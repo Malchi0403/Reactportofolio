@@ -82,7 +82,18 @@ const Hero = () => {
                     <div className="flex items-center"
                     >
                         <div className="flex flex-col-reverse xs:gap-y-4 scale-75 lg:scale-100  md:flex-col-reverse lg:flex-row">
-                            <div className="w-1 mr-8 mt-11 md:h-48 bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 lg:block md:hidden " />
+                            <motion.div initial={{
+                                opacity: 0,
+                                x: -25,
+                            }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        duration: 1,
+                                        delay: 1,
+                                    }
+                                }} className="w-1 mr-8 mt-11 md:h-48 bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 lg:block md:hidden " />
                             <div className="flex flex-col sm:max-w-2xl  mr-0 items-center md:w-full md:items-center lg:items-start">
                                 <motion.div initial={{
                                     opacity: 0,
@@ -93,7 +104,7 @@ const Hero = () => {
                                         y: 0,
                                         transition: {
                                             duration: 1,
-                                            delay: 2,
+                                            delay: 1,
                                         }
                                     }} className="mt-12 mr-4 text-center md:pl-10 md:text-left font-body font-extrabold ">
                                     <h1
@@ -107,18 +118,40 @@ const Hero = () => {
                                         onClick={() => downloadFile(PDF_FILE_URL)} className='text-white font-primary tracking-wider bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 px-10 py-1 md:py-2 md:px-14 rounded-full' >Download Resume</button>
                                 </motion.div>
                             </div>
-                            <div className="w-1/2 lg:w-auto mx-auto h-60  bg-violet-800 bg-opacity-20 rounded-t-full outline outline-offset-8 outline-fuchsia-600">
+                            <motion.div initial={{
+                                opacity: 0,
+                                y: -25,
+                            }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 1,
+                                        delay: 1.2,
+                                    }
+                                }} className="w-1/2 lg:w-auto mx-auto h-60  bg-violet-800 bg-opacity-20 rounded-t-full outline outline-offset-8 outline-fuchsia-600">
                                 <Canvas className="absolute inset-0">
                                     <Suspense fallback={<CanvasLoader />}>
                                         <MyMesh />
                                     </Suspense>
                                     <Preload all />
                                 </Canvas>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
-                <div className="absolute  lg:bottom-64 md:bottom-64 bottom-7 ">
+                <motion.div initial={{
+                    opacity: 0,
+                    y: -25,
+                }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            duration: 1,
+                            delay: 1.2,
+                        }
+                    }} className="absolute  lg:bottom-64 md:bottom-64 bottom-7 ">
                     <div className="absolute hidden md:top-44 lg:bottom-1 w-full md:flex justify-center  items-center z-30">
                         <Link
                             to={navigation[1].id}
@@ -141,7 +174,7 @@ const Hero = () => {
                             />
                         </Link>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </div>
     )

@@ -1,16 +1,25 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { gitHub, verceel } from "../assets/tech"
+import { gitHub, verceel } from "../assets/tech";
+import { navigation, profile } from "../data";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
-import { profile } from "../data";
-import { navigation } from "../data";
+import { styles } from "../styles";
 
 const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
-    <motion.div variants={fadeIn("up", "spring", index * 0.75, 2)}>
+    <motion.div initial={{
+        opacity: 0,
+        y: -25,
+    }}
+        whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1,
+                delay: 1 + index * 0.2,
+            }
+        }}>
         <Tilt
             options={{
                 max: 45,
@@ -19,7 +28,18 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
             }}
             className='bg-sky-950 mb-40 p-5 rounded-2xl sm:w-[360px] w-full '
         >
-            <div className='relative w-full h-[230px] '>
+            <motion.div initial={{
+                opacity: 0,
+                y: -25,
+            }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        duration: 1,
+                        delay: 1,
+                    }
+                }} className='relative w-full h-[230px] '>
                 <img
                     src={image}
                     alt='project_image'
@@ -49,7 +69,7 @@ const ProjectCard = ({ index, title, desc, vercel, github, image, tags }) => (
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
 
             <div className='mt-5 overflow-auto'>
                 <h3 className='text-white font-bold text-[24px]'>{title}</h3>
@@ -73,15 +93,59 @@ const Projects = () => {
     const [Profile] = profile
     return (
         <>
-            <div className='m-6 max-xs:mt-8 mb-36 lg:mb-3 lg:mt-11  lg:mx-14  '>
-                <motion.div variants={textVariant()}>
-                    <p className={`${styles.sectionSubText} mb-5 max-xs:mb-1`}>My Project</p>
-                    <h2 className={`${styles.sectionHeadText} mb-6`}>Projects Experience</h2>
-                </motion.div>
+            <motion.div initial={{
+                opacity: 0,
+                y: -25,
+            }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        duration: 1,
+                        delay: 0.5,
+                    }
+                }} className='m-6 max-xs:mt-8 mb-36 lg:mb-3 lg:mt-11  lg:mx-14  '>
+                <div>
+                    <motion.p initial={{
+                        opacity: 0,
+                        x: -25,
+                    }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                duration: 1,
+                                delay: 0.5,
+                            }
+                        }} className={`${styles.sectionSubText} mb-5 max-xs:mb-1`}>My Project</motion.p>
+                    <motion.h2 initial={{
+                        opacity: 0,
+                        y: -25,
+                    }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 1,
+                                delay: 0.8,
+                            }
+                        }} className={`${styles.sectionHeadText} mb-6`}>Projects Experience</motion.h2>
+                </div>
 
                 <div className='w-full flex'>
                     <motion.p
-                        variants={fadeIn("", "", 0.1, 1)}
+                        initial={{
+                            opacity: 0,
+                            y: -25,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 1,
+                                delay: 1,
+                            }
+                        }}
                         className='mt-3 text-secondary text-[14px] max-w-7xl max-xs:leading-5 leading-[30px]'
                     >
                         Following projects showcases my skills and experience. Each project is briefly described with
@@ -98,7 +162,7 @@ const Projects = () => {
                         )
                     })}
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 };
