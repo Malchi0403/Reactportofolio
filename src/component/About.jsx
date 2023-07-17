@@ -43,7 +43,7 @@ const About = () => {
 
         <div className='m-6 mb-36 lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
 
-            <div className='lg:flex xs:block gap-1 border '>
+            <div className='lg:flex xs:block gap-1 '>
                 <Tilt className=" w-[130px] xs:w-[200px] lg:w-[100rem]  sm:mx-auto max-xs:mx-auto items-center  border-8 rounded-lg lg:shadow-md shadow-slate-50">
                     <motion.img initial={{
                         opacity: 0,
