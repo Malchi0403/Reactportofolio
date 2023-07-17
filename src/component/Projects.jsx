@@ -104,7 +104,7 @@ const Projects = () => {
                         duration: 1,
                         delay: 0.5,
                     }
-                }} className='m-6 max-xs:mt-8 mb-36 lg:mb-3 lg:mt-11  lg:mx-14  '>
+                }} className='m-6 max-xs:mt-10 mb-36 lg:mb-3 lg:mt-14  lg:mx-14  '>
                 <div>
                     <motion.p initial={{
                         opacity: 0,

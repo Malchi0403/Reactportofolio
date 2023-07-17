@@ -44,18 +44,7 @@ const About = () => {
         <div className='m-6 mb-36 lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
 
             <div className='lg:flex xs:block gap-16 '>
-                <motion.Tilt initial={{
-                    opacity: 0,
-                    y: -25,
-                }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                            duration: 1,
-                            delay: 0.8,
-                        }
-                    }} className=" w-[130px] xs:w-[200px] lg:w-full mb-8 mx-auto  items-center  border-8 rounded-lg lg:shadow-md shadow-slate-50">
+                <Tilt className=" w-[130px] xs:w-[200px] lg:w-full mb-8 mx-auto  items-center  border-8 rounded-lg lg:shadow-md shadow-slate-50">
                     <motion.img initial={{
                         opacity: 0,
                         y: -25,
@@ -69,7 +58,7 @@ const About = () => {
                                 delay: 1,
                             }
                         }} src={images[0].mine} className='h-full w-full' />
-                </motion.Tilt>
+                </Tilt>
                 <div className="">
                     <div className='lg:text-[42px] xs:text-[32px] text-center'>
                         <motion.h1 initial={{
