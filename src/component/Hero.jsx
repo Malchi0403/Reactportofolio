@@ -1,19 +1,17 @@
-import { Float, OrbitControls, Preload } from "@react-three/drei"
+import { Float, Preload } from "@react-three/drei"
 import { Canvas, useThree } from "@react-three/fiber"
 import { motion } from 'framer-motion'
 import { Suspense, useEffect, useRef } from "react"
 import { Link } from "react-scroll"
-// import Newest from '../Newest'
-import loadable from "@loadable/component"
+import { Newest } from "../Newest"
 import { navigation, profile } from "../data"
 import { SectionWrapper } from "../hoc"
 import CanvasLoader from "./Loader"
 import { Stars } from "./canvas"
-import { Newest } from "../Newest"
 
 
 // download
-const PDF_FILE_URL = "https://react-portofolio-cyan.vercel.app/New_Mine_CV.pdf"
+const PDF_FILE_URL = "https://portofolio-react-tau.vercel.app/New_Mine_CV.pdf"
 // size 3d
 function MyMesh({ isMobile }) {
     const meshPosition = useRef(isMobile ? [0, -2.80, 0] : [1.2, -3.2, 1.2]);
