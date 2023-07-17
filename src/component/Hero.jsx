@@ -115,7 +115,7 @@ const Hero = () => {
                                         {Profile?.content}
                                     </p>
                                     <button
-                                        onClick={() => downloadFile(PDF_FILE_URL)} className='text-white font-primary tracking-wider bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 px-10 py-1 md:py-2 md:px-14 rounded-full' >Download Resume</button>
+                                        onClick={() => downloadFile(PDF_FILE_URL)} className='text-white font-primary tracking-wider bg-gradient-to-br from-violet-500 via-pink-500 to-red-500 px-10 py-1 md:py-2 md:px-14 rounded-full' >DOWNLOAD CV</button>
                                 </motion.div>
                             </div>
                             <motion.div initial={{
