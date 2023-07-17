@@ -7,7 +7,7 @@ import { fadeIn, textVariant } from "../utils/motion"
 
 const ServiceSkills = ({ index, name }) => {
     return (
-        <div className="w-full border  ">
+        <div className="w-full ">
             <div className="mx-auto w-[80%]">
 
                 <Tilt className=" lg:w-[300px] xs:w-[280px]">
@@ -32,7 +32,7 @@ const About = () => {
 
         <div className='m-6 mb-36 lg:mb-3 lg:m-14  relative' id={navigation[1].id}>
 
-            <div className='lg:flex xs:block gap-16 border'>
+            <div className='lg:flex xs:block gap-16 '>
                 <Tilt className=" w-[130px] xs:w-[200px] lg:w-full mb-8 mx-auto  items-center  border-8 rounded-lg lg:shadow-md shadow-slate-50">
                     <motion.img variants={fadeIn("", "spring", 0.5, 0.75)} src={images[0].mine} className='h-full w-full' />
                 </Tilt>

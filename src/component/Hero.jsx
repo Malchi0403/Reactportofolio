@@ -97,7 +97,7 @@ const Hero = () => {
                                             duration: 1,
                                             delay: 2,
                                         }
-                                    }} className=" border mt-12 mr-4 text-center md:pl-10 md:text-left font-body font-extrabold ">
+                                    }} className="mt-12 mr-4 text-center md:pl-10 md:text-left font-body font-extrabold ">
                                     <h1
                                         className="text-2xl md:text-3xl md:mb-4">
                                         Hey, I'm <span className="text-fuchsia-800">{Profile.name}</span>
