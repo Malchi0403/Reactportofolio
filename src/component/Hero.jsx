@@ -11,7 +11,7 @@ import { Stars } from "./canvas"
 
 
 // download
-const PDF_FILE_URL = "https://portofolio-react-tau.vercel.app/New_Mine_CV.pdf"
+const PDF_FILE_URL = "https://malchiramportofolio.vercel.app/New_Mine_CV.pdf"
 // size 3d
 function MyMesh({ isMobile }) {
     const meshPosition = useRef(isMobile ? [0, -2.80, 0] : [1.2, -3.2, 1.2]);
