@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 const Header = lazy(() => import("./component/Header"))
 const Hero = lazy(() => import("./component/Hero"))
@@ -11,6 +12,7 @@ const StarsCanvas = lazy(() => import("./component/canvas/Stars"))
 export default function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <Suspense fallback={<h1>LOADING .....</h1>}>
         <div className='bg-primary overflow-hidden' >
           <Header />
